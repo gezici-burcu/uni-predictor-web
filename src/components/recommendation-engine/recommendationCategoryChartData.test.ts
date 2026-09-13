@@ -1,0 +1,7 @@
+import {describe,expect,it} from "vitest";
+import {createRecommendationCategoryChartData,getRecommendationCategoryLabel} from "./recommendationCategoryChartData";
+describe("recommendation category labels",()=>{
+  it("resolves THE labels in Turkish and English",()=>{expect(getRecommendationCategoryLabel("the","researchEnvironment","tr")).toEqual({label:"Araştırma Ortamı",shortLabel:"Araştırma Ort."});expect(getRecommendationCategoryLabel("the","researchEnvironment","en")).toEqual({label:"Research Environment",shortLabel:"Research Env."})});
+  it("resolves QS and UI GreenMetric labels",()=>{expect(getRecommendationCategoryLabel("qs","globalEngagement","tr").label).toBe("Küresel Katılım");expect(getRecommendationCategoryLabel("ui-greenmetric","GD","en").shortLabel).toBe("Governance")});
+  it("keeps keys and numeric scores unchanged while translating",()=>{const current={teaching:41,researchQuality:52},recommended={teaching:44,researchQuality:56};const tr=createRecommendationCategoryChartData({methodology:"the",current,recommended,language:"tr"}),en=createRecommendationCategoryChartData({methodology:"the",current,recommended,language:"en"});expect(tr.map(item=>item.key)).toEqual(["teaching","researchQuality"]);expect(tr.map(item=>[item.current,item.recommended])).toEqual(en.map(item=>[item.current,item.recommended]));expect(tr[0].shortLabel).toBe("Öğretim");expect(en[0].shortLabel).toBe("Teaching")});
+});

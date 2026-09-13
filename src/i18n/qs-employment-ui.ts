@@ -1,0 +1,8 @@
+export const qsEmploymentUiTranslations = {
+  tr: {
+    analysis: "Mezun İstihdam Analizi", surveyResponseRate: "Anket Yanıt Oranı", rawEmploymentRate: "Ham Mezun İstihdam Oranı", dataSufficiency: "Veri Yeterliliği", sufficient: "Yeterli", lowResponse: "Düşük Yanıt Oranı", unavailable: "Hesaplanamadı", unclassified: "Sınıflandırılmamış Katılımcı", currentScoreHeld: "Mevcut Skor Sabit Tutuldu", totalGraduates: "Toplam Mezun Sayısı", totalParticipants: "Toplam Katılımcı Sayısı", employed: "İstihdam Edilen Mezun Sayısı", unemployed: "İşsiz Mezun Sayısı", furtherStudy: "İleri Eğitime Devam Eden Mezun Sayısı", unavailableGraduates: "Çalışmaya Uygun Olmayan Mezun Sayısı", eoStatus: "EO Gösterge Skoru Durumu", explanation: "Ham mezun istihdam oranı hesaplandı. QS ülke/dünya normalizasyonu ve Alumni Impact verisi bulunmadığı için EO gösterge skoruna dönüştürülmedi.",
+  },
+  en: {
+    analysis: "Graduate Employment Analysis", surveyResponseRate: "Survey Response Rate", rawEmploymentRate: "Raw Graduate Employment Rate", dataSufficiency: "Data Sufficiency", sufficient: "Sufficient", lowResponse: "Low Response Rate", unavailable: "Could not be calculated", unclassified: "Unclassified Respondents", currentScoreHeld: "Current Score Held Constant", totalGraduates: "Total Graduates", totalParticipants: "Total Participants", employed: "Employed Graduates", unemployed: "Unemployed Graduates", furtherStudy: "Graduates Continuing Further Study", unavailableGraduates: "Graduates Unavailable for Work", eoStatus: "EO Indicator Score Status", explanation: "The raw graduate employment rate was calculated. It was not converted into an EO indicator score because QS country/global normalization and Alumni Impact data are unavailable.",
+  },
+} as const;

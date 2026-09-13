@@ -39,3 +39,73 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Gerçek üniversite verileri
+/private-data/
+/src/data/private/
+/public/private-data/
+
+# Reproducible ranking import response cache (contains no credentials)
+/data-cache/the/
+
+# ==================================================
+# PRIVATE / INSTITUTIONAL / REFERENCE DATA
+# ==================================================
+
+# Raw/imported datasets
+/data-import/
+/output/
+
+# Institution-specific data
+/src/data/data-entry/
+/src/data/qs/
+/src/data/the/
+/src/data/ui-greenmetric/
+/src/data/rankings/
+
+# Any private datasets
+/private-data/
+/src/data/private-data/
+/public/private-data/
+
+# Common dataset formats
+*.csv
+*.xlsx
+*.xls
+
+# Temporary logs
+.tmp-*.log
+/src/data/
+
+/docs/qs-2027-reference-data.md
+/docs/qs-reference-dataset.md
+/src/lib/the/ataturk-reference.ts
+
+/docs/
+/scripts/
+/src/tests/
+/src/lib/the/ataturk-reference.ts
+/src/config/qs-reference-source-2027.ts
+
+/status.txt
+
+/src/config/qs.public-simulation.ts
+/src/config/qs.stochastic-calibration.ts
+/src/config/the.public-simulation.ts
+/src/lib/calculations/qs/calculateQsResult.ts
+/src/lib/calculations/the/calculateThePublicSimulationResult.ts
+/src/lib/calculations/the/createThePublicSimulationReferences.ts
+/src/lib/qs/qs-institution-year-data.ts
+/src/lib/qs/qs-reference-source-2027.ts
+/src/lib/the/estimate-complete-category-scores.ts
+/src/lib/the/stochastic/the-stochastic-model-config.ts
+/src/lib/the/the-2024-baseline-report.ts
+/src/lib/the/the-rank-band-source.ts
+
+/src/lib/**/*.test.ts
+
+/src/components/qs/QsRankEstimationDetails.tsx
+/src/config/qs-rank-estimation.ts
+/src/config/qs.metrics.ts
+
+/src/lib/calculations/qs/runQsStochasticSimulation.ts

@@ -1,0 +1,3 @@
+"use client";
+import {AppLanguageProvider} from "./AppLanguageContext";import {InstitutionDataProvider} from "./InstitutionDataContext";import {MethodologyBaselineProvider} from "./MethodologyBaselineContext";import {MethodologyScenarioProvider} from "./MethodologyScenarioContext";import {SavedScenariosProvider} from "./SavedScenariosContext";
+export function AppProviders({children}:{children:React.ReactNode}){return <AppLanguageProvider><MethodologyBaselineProvider><InstitutionDataProvider><MethodologyScenarioProvider><SavedScenariosProvider>{children}</SavedScenariosProvider></MethodologyScenarioProvider></InstitutionDataProvider></MethodologyBaselineProvider></AppLanguageProvider>}

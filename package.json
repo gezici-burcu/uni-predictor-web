@@ -6,12 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run",
+    "import:the-ranking": "node scripts/rankings/import-the-ranking.mjs",
+    "import:greenmetric-2025": "node scripts/rankings/import-ui-greenmetric-2025.mjs",
+    "data:import:the-2026": "node --experimental-strip-types scripts/import-the-reference-dataset.ts",
+    "report:the-2024-baseline": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/report-the-2024-baseline.ts",
+    "report:the-stochastic-direction": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/diagnose-the-stochastic-direction.ts",
+    "report:the-calibration-identity": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/diagnose-the-calibration-identity.ts",
+    "report:the-rank-calibration": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/diagnose-the-rank-calibration.ts",
+    "profile:the-stochastic": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/profile-the-stochastic-performance.ts",
+    "report:qs-raw-indicators": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/report-qs-raw-indicators.ts",
+    "report:qs-stochastic-simulation": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/report-qs-stochastic-simulation.ts",
+    "report:qs-canonical-data": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/report-qs-canonical-institution-data.ts",
+    "import:qs-reference-data": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/import-qs-2027-reference-source.ts",
+    "import:qs-reference-2027": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/import-qs-2027-reference-source.ts",
+    "report:qs-reference-data": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/report-qs-reference-data.ts"
+    ,"report:qs-reference-import": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/report-qs-reference-import.ts",
+    "build:qs-rank-model": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/build-qs-rank-model.ts",
+    "report:qs-rank-estimator": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/register-ts-alias.mjs scripts/report-qs-rank-estimator.ts"
   },
   "dependencies": {
     "next": "16.2.10",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "recharts": "^3.9.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -21,6 +40,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }

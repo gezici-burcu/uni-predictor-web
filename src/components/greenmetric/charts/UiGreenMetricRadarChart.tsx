@@ -1,0 +1,14 @@
+"use client";
+
+import { Legend, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip } from "recharts";
+import { UiGreenMetricChartTooltip } from "./UiGreenMetricChartTooltip";
+import { hasAnyGreenMetricChartData, type UiGreenMetricRadarDatum } from "./greenMetricChartData";
+
+export function UiGreenMetricRadarChart({ data }: { data: UiGreenMetricRadarDatum[] }) {
+  const hasData = hasAnyGreenMetricChartData(data);
+  return <section className="chart-card relative min-w-0 overflow-hidden rounded-3xl border border-white/80 bg-white p-4 shadow-sm sm:p-5">
+    <div aria-hidden="true" className="chart-card-orb"/>
+    <div className="relative flex min-h-11 items-start gap-3"><span aria-hidden="true" className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-emerald-500 text-white shadow-lg shadow-cyan-500/20"><svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2"><path d="m12 3 8 6-3 10H7L4 9l8-6Z"/><path d="m4 9 13 10M20 9 7 19M12 3v16"/></svg></span><div><h2 className="text-sm font-bold text-slate-950">Kategori Dağılımı</h2><p className="mt-0.5 text-xs leading-4 text-slate-500">Yedi kategorinin 0–100 performans karşılaştırması</p></div></div>
+    {hasData ? <div className="relative h-[280px] w-full sm:h-[310px]" role="img" aria-label="UI GreenMetric kategori dağılımı"><ResponsiveContainer width="100%" height="100%"><RadarChart data={data} outerRadius="70%"><defs><radialGradient id="greenRadarCurrent"><stop offset="0%" stopColor="#6366f1" stopOpacity="0.38"/><stop offset="100%" stopColor="#2563eb" stopOpacity="0.08"/></radialGradient><radialGradient id="greenRadarScenario"><stop offset="0%" stopColor="#34d399" stopOpacity="0.3"/><stop offset="100%" stopColor="#059669" stopOpacity="0.06"/></radialGradient></defs><PolarGrid stroke="#cbd5e1" strokeDasharray="3 4"/><PolarAngleAxis dataKey="shortLabel" tick={{fontSize:10,fill:"#475569"}}/><PolarRadiusAxis domain={[0,100]} ticks={[0,25,50,75,100]} tick={{fontSize:10,fill:"#94a3b8"}}/><Tooltip content={(props)=><UiGreenMetricChartTooltip {...props}/>} /><Legend/><Radar name="Mevcut" dataKey="current" stroke="#4f46e5" fill="url(#greenRadarCurrent)" fillOpacity={1} strokeWidth={2.5} connectNulls={false} isAnimationActive={false}/><Radar name="Senaryo" dataKey="scenario" stroke="#059669" fill="url(#greenRadarScenario)" fillOpacity={1} strokeWidth={2.5} strokeDasharray="6 4" connectNulls={false} isAnimationActive={false}/></RadarChart></ResponsiveContainer></div> : <div className="mt-3 flex min-h-40 items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-slate-50/70 px-4 text-center text-xs leading-5 text-slate-500">Kategori skorları tamamlanınca radar grafik görüntülenecektir.</div>}
+  </section>;
+}
