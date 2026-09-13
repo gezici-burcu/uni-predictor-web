@@ -10,6 +10,7 @@ Desteklenen metodolojiler:
 
 > [!IMPORTANT]
 > Bu proje THE, QS veya UI GreenMetric tarafından sağlanan resmî bir sıralama aracı değildir. Üretilen skorlar ve sıralama bantları simülasyon, senaryo analizi ve repository'de bulunan yayımlanmış geçmiş verilerle yaklaşık kalibrasyon amacı taşır. Kesin veya resmî sıralama sonucu olarak yorumlanmamalıdır.
+> > Repository herhangi bir üniversiteye ait özel veya gizli kurumsal veri içermez. Kullanıcı tarafından girilen kurumsal veriler kaynak koda dahil edilmez.
 
 ## Özellikler
 
